@@ -12,7 +12,7 @@ public class FileSourceUtil {
         FileSource<String> fileSource = FileSource
                 .forRecordStreamFormat(
                         new TextLineInputFormat(),
-                        new Path("src/input/"+tableName+".txt")
+                        new Path("src/testInput/"+tableName+".txt")
                 )
                 .build();
         return env.fromSource(fileSource, WatermarkStrategy.noWatermarks(), tableName+"_file_source");
